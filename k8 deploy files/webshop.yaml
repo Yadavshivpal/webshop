@@ -1,1 +1,22 @@
-
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webshop
+  labels:
+    app: webshop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webshop
+  template:
+    metadata:
+      labels:
+        app: webshop
+    spec:
+      containers:
+        - name: webshop
+          image: shivpalyadav/webshop:1.0.0.0
+          ports:
+            - containerPort: 5000
+          imagePullPolicy: Always
