@@ -41,14 +41,20 @@
 </style>
 </head>
 <body>
-
 <h1>Web Inventory welcomes you</h1>
 <form action="/" method="PUT">
 <button class="button button1">HOME</button>
 </form>
-<form action="/print" method="GET">
-<button class="button button3">SHOW PRODUCTS</button>
-</form>
-<h1>Successfuly updated</h1>
+<body>
+        <h2> "Enter the updates details of product"<h2>
+          <form method=POST>
+                  <input type=text class= "button button1"placeholder="name" name="name"/>
+                  <input type=number class= "button button1" placeholder="price" name="price" />
+                  <button class="button button1" formaction="/add" method="POST">ADD Product</button>
+          </form>
+</body>
+
+
+
 </body>
 </html>

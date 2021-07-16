@@ -41,14 +41,18 @@
 </style>
 </head>
 <body>
-
 <h1>Web Inventory welcomes you</h1>
-<form action="/" method="PUT">
+<form action="/" method="GET">
 <button class="button button1">HOME</button>
 </form>
-<form action="/print" method="GET">
-<button class="button button3">SHOW PRODUCTS</button>
-</form>
-<h1>Successfuly updated</h1>
+<br><br>
+<body>
+  {% for key in records %}
+  Thank you for purchasing RS. {{ key.price }} for product {{ key.name }}<br><br>
+  {% endfor %}
+</body>
+
+
+
 </body>
 </html>

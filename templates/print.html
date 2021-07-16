@@ -41,14 +41,31 @@
 </style>
 </head>
 <body>
-
 <h1>Web Inventory welcomes you</h1>
 <form action="/" method="PUT">
 <button class="button button1">HOME</button>
 </form>
-<form action="/print" method="GET">
-<button class="button button3">SHOW PRODUCTS</button>
+    <h2> List of Products</h2>
+
+    <br><br>
+    <div id="records">
+        {% for record in list %}
+        Name -  {{ record.name }} |  Price -  {{ record.price }}<br><br>
+        {% endfor %}
+    </div>
+</body>
+<form method=GET>
+        <input type=text class= "button button1"placeholder="name" name="name"/>
+        <button class="button button1" formaction="/buy">BUY</button>
 </form>
-<h1>Successfuly updated</h1>
+
+<form method=GET>
+        <h2> Enter The name of Product name for update</h2>
+        <input type=text class= "button button1"placeholder="name" name="name"/>
+        <button class="button button1" formaction="/update">UPDATE</button>
+</form>
+
+
+
 </body>
 </html>
