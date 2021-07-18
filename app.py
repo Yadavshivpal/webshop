@@ -1,7 +1,11 @@
 from flask import Flask, redirect, request, jsonify, Response,render_template,url_for
-import pymongo
+from flask_pymongo import PyMongo
+import os
 
-myclient = pymongo.MongoClient('mongodb://localhost:27017/')
+app = Flask(__name__)
+app.config["MONGO_URI"] = "mongodb://mongo:27017/dev"
+mongo = PyMongo(app)
+myclient = mongo.db
 mydb = myclient['mydatabase']
 mycol = mydb["inventory"]
 app = Flask(__name__)
@@ -38,4 +42,4 @@ def buy():
     return render_template('buy.html',records=x)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000)
